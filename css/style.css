@@ -112,13 +112,20 @@ body{
     background-color: var(--theme_green);
     z-index: -1;
 }
-.active-point::after,.bottom_line::after {
+.active-point::after,
+a.bottom_line::after,
+.bottom_line a::after,
+span.bottom_line::after, 
+.bottom_line span::after {
     content: "";
     display: block;
     height: 3px;
     /* width: min(100%, 275px); */
     width:100%;
     background-color: var(--theme_green);
+}
+svg path{
+    fill:#fafa11;
 }
 .bottom_line-short::after {
     content: "";
@@ -350,3 +357,99 @@ header:first-child{
     bottom:0;
     padding-right: 15px;
 }
+
+/*----Section categories----*/
+#categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.categories-pentograms{
+    margin:60px 160px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.categories-pentograms button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.categories-pentograms span{
+    margin-top: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.categories-catalog{
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    margin: 85px 50px 0;
+}
+.categories-card{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    width: 586px;
+}
+.categories-card>img{
+    height: 300px;
+}
+.categories-card:hover{
+    cursor: pointer;
+}
+.categories-card .card-price{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.categories-card:hover .card-price {
+    background-color: var(--theme_green);
+}
+.categories-card:hover .card-price span,
+.categories-card:hover .card-price s{
+    color: white;
+}
+.card.new::before{
+    content:"новинка";
+    position:absolute;
+    top:10px;
+    padding:5px 15px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #1E2E36;
+}
+.card.bestseller::before{
+    content:"хіт продаж";
+    position:absolute;
+    top:10px;
+    padding:5px 15px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #1E2E36;
+}
+.card.promotion::after{
+    content:"акція";
+    position:absolute;
+    top:48px;
+    padding:5px 15px;
+    text-transform: uppercase;
+    color: white;
+    background-color: red;
+}
+
+.coust_promotion{
+    color:red;
+}
+.coust_promotion s{
+    font-size: 18px;
+    color:#BCBDBB;
+}
+#categories>.button_independent{
+margin: 50px auto 0;
+}
+
