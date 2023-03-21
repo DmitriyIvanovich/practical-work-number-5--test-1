@@ -65,7 +65,7 @@ a:hover {
 button {
     border: 0;
     border-radius: 3px;
-    background-color: skyblue;
+    background-color: inherit;
     text-transform: uppercase;
 }
 
@@ -96,13 +96,40 @@ body{
 .decor-bird {
     padding-left: 10px;
 }
-
-.active.low-line::after {
+.decor-header-theme{
+    margin: 100px auto 50px;
+    width: max-content;
+    font-size: 48px;
+}
+.decor-header-theme::before{
+    content: "";
+    position:relative;
+    left:15px;
+    display: inline-block;
+    width: 20px;
+    height: 50px;
+    vertical-align: sub;
+    background-color: var(--theme_green);
+    z-index: -1;
+}
+.active-point::after,.bottom_line::after {
+    content: "";
+    display: block;
+    height: 3px;
+    /* width: min(100%, 275px); */
+    width:100%;
+    background-color: var(--theme_green);
+}
+.bottom_line-short::after {
     content: "";
     display: block;
     height: 3px;
     width: min(100%, 275px);
     background-color: var(--theme_green);
+}
+.close{
+    height: 0;
+    overflow: hidden;
 }
 
 header {
@@ -273,4 +300,53 @@ header:first-child{
 }
 .main-hanging_card button:first-child{
     margin-right: 8px;
+}
+
+#advantages{
+    margin: 0 50px;
+}
+.advantages-carousel{
+    position:relative;
+}
+.carousel-ribbon{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    /* background-color: green; */
+}
+.advantages-carousel .catousel-card{
+    position: relative;
+    height: 350px;
+    background-color: red;
+    cursor:pointer;
+}
+
+.catousel-card .float_content{
+    position:absolute;
+    bottom:30px;
+    left:30px;
+    color:white;
+}
+.catousel-card .float_content h4{
+    font-size: 36px;
+    width: max-content;
+}
+.catousel-card .float_content p{
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+.carousel button.back{
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom:0;
+    padding-left: 15px;
+}
+.carousel button.next{
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom:0;
+    padding-right: 15px;
 }
